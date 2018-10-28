@@ -37,10 +37,8 @@ public class ShopAdapter extends ArrayAdapter<Shop> {
         // set this text on the name TextView
         nameTextView.setText(currentWord.getmName());
 
-        // Find the TextView in the list_item.xml layout with the ID version_number
         TextView numberTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
-        // Get the version number from the current AndroidFlavor object and
-        // set this text on the number TextView
+
         numberTextView.setText(currentWord.getmDetail());
 
         ImageView numberImageView = (ImageView) listItemView.findViewById(R.id.image);
