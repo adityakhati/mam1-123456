@@ -1,8 +1,8 @@
 package com.example.android.footaball_turf;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.footaball_turf.data.RegisterDbHelper;
-import com.example.android.footaball_turf.R;
 
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -62,21 +61,26 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     }
 
-    private void verify(){
+    private void verify() {
 
-        if(databaseHelper.checkUser(mEmailEditText.getText().toString().trim(), mPassEditText.getText().toString().trim()))
-        {
-            Intent ChooseIntent = new Intent(activity, Choose_activity1.class);
-            ChooseIntent.putExtra("EMAIL", mEmailEditText.getText().toString().trim());
-            empty();
-            startActivity(ChooseIntent);
+
+        if (mEmailEditText.getText().toString().matches("")) {
+            mEmailEditText.setError("Email is empty");
+        } else if (mPassEditText.getText().toString().matches("")) {
+            mPassEditText.setError("Password is empty");
+        } else {
+
+            if (databaseHelper.checkUser(mEmailEditText.getText().toString().trim(), mPassEditText.getText().toString().trim())) {
+                Intent ChooseIntent = new Intent(activity, Choose_activity1.class);
+                ChooseIntent.putExtra("EMAIL", mEmailEditText.getText().toString().trim());
+                empty();
+                startActivity(ChooseIntent);
+            } else {
+                Toast.makeText(this, "Wrong Email or Password. Try Again.", Toast.LENGTH_SHORT).show();
+
+            }
+
         }
-        else
-        {
-            Toast.makeText(this, "Wrong Email or Password. Try Again." , Toast.LENGTH_SHORT).show();
-
-        }
-
     }
 
     private void empty(){

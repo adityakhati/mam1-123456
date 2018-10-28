@@ -72,25 +72,37 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String emailString = mEmailEditText.getText().toString().trim();
         String passString = mPassEditText.getText().toString().trim();
 
-
-        RegisterDbHelper mdbHelper = new RegisterDbHelper(this);
-        SQLiteDatabase db = mdbHelper.getWritableDatabase();
-
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_NAME, nameString);
-        values.put(COLUMN_EMAIL, emailString);
-        values.put(COLUMN_PASS, passString);
-
-        // Inserting Row
-        long newRowId = db.insert(TABLE_NAME, null, values);
-        Log.v("CatalogActivity", "New row ID" + newRowId);
-
-        if (newRowId == -1) {
-            Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "User saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();
+        if(nameString.matches(""))
+        {
+            mNameEditText.setError("Name is empty");
         }
+        else if(emailString.matches(""))
+        {
+            mNameEditText.setError("Email is empty");
+        }
+        else if(passString.matches(""))
+        {
+            mNameEditText.setError("Password is empty");
+        }
+        else {
+            RegisterDbHelper mdbHelper = new RegisterDbHelper(this);
+            SQLiteDatabase db = mdbHelper.getWritableDatabase();
 
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_NAME, nameString);
+            values.put(COLUMN_EMAIL, emailString);
+            values.put(COLUMN_PASS, passString);
+
+            // Inserting Row
+            long newRowId = db.insert(TABLE_NAME, null, values);
+            Log.v("CatalogActivity", "New row ID" + newRowId);
+
+            if (newRowId == -1) {
+                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "User saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
 }

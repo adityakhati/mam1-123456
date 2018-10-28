@@ -29,6 +29,5 @@ public class Shop {
     {
         return  mshopimage;
     }
-
 }
 
