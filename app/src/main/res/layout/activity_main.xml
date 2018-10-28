@@ -4,6 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:padding="15dp"
+    android:background="@drawable/background_manan"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -21,6 +23,7 @@
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:drawableLeft="@drawable/ic_person"
         android:layout_marginTop="30dp"
         android:hint="Name"
         android:textSize="20sp" />
@@ -31,12 +34,14 @@
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
         android:hint="Email id"
+        android:drawableLeft="@drawable/ic_email_black_24dp"
         android:textSize="20sp" />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
         android:hint="Password"
+        android:drawableLeft="@drawable/ic_lock_black_24dp"
         android:inputType="textPassword"
         android:id="@+id/password"
         android:textSize="20sp"/>
@@ -47,6 +52,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/button_register"
         android:text="Register"
+        android:background="@drawable/button"
         android:layout_gravity="center"
         android:textSize="20sp"/>
 

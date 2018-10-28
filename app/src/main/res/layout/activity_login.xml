@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_manan"
     tools:context=".LoginActivity">
 
     <LinearLayout
+        android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -18,6 +20,7 @@
         android:textSize="30sp" />
     <EditText
         android:id="@+id/email"
+        android:drawableLeft="@drawable/ic_email_black_24dp"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
@@ -28,6 +31,7 @@
         android:layout_height="50dp"
         android:layout_marginTop="30dp"
         android:hint="Password"
+        android:drawableLeft="@drawable/ic_lock_black_24dp"
         android:id="@+id/password"
         android:textSize="20sp"
         android:inputType="textPassword"/>
@@ -37,6 +41,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button_login"
             android:text="LOGIN"
+            android:background="@drawable/button"
             android:layout_gravity="center"
             android:textSize="20sp"/>
         <TextView

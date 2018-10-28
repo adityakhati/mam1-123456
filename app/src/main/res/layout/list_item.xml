@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/list_item_height"
-    android:background="@color/tan_background"
+    android:background="@drawable/background_manan"
     android:minHeight="@dimen/list_item_height"
     android:orientation="horizontal">
 
@@ -22,7 +23,6 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@id/image"
-        android:background="@color/category_numbers"
         android:orientation="horizontal"
         android:paddingLeft="16dp">
 
@@ -47,6 +47,14 @@
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="@android:color/white"
             tools:text="one" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="buy"
+            android:background="@drawable/button"
+            android:onClick="onbuy"
+            />
+
     </LinearLayout>
 
 </RelativeLayout>
